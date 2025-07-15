@@ -87,11 +87,11 @@ kubectl apply -f k8s-manifests/ingress
 
 ## 🔐 Production Features
 
-✅ Traefik-compatible Ingress with cert-manager TLS
-✅ Redis session persistence
-✅ Horizontal Pod Autoscaler (backend)
-✅ Pod anti-affinity rules
-✅ Resource requests and limits (frontend, backend, Redis)
+✅ Traefik-compatible Ingress with cert-manager TLS  
+✅ Redis session persistence  
+✅ Horizontal Pod Autoscaler (backend)  
+✅ Pod anti-affinity rules  
+✅ Resource requests and limits (frontend, backend, Redis)  
 
 ---
 
