@@ -3,7 +3,8 @@
 > Inspired by this YouTube video: [https://youtu.be/9RUhp99J87c?si=bkGzkix4QVdSKiqV](https://youtu.be/9RUhp99J87c?si=bkGzkix4QVdSKiqV)
 
 > A full-stack Reflex web application deployed to Kubernetes.
-> Built and maintained by [KubeSkills](https://kubeskills.com) to demonstrate secure, scalable, Python-native app delivery.
+
+> Modified and maintained by [KubeSkills](https://kubeskills.com) to demonstrate secure, scalable, Python-native app delivery to [Kubernetes](https://kubernetes.io).
 
 ---
 
