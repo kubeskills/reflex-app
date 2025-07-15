@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: podcast-backend
+  namespace: podcast
+spec:
+  selector:
+    app: podcast-backend
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000

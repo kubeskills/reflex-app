@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: podcast-backend
+  namespace: podcast
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: podcast-backend
+  template:
+    metadata:
+      labels:
+        app: podcast-backend
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - podcast-backend
+              topologyKey: "kubernetes.io/hostname"
+      containers:
+        - name: backend
+          image: kubeskills/podcast-backend:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: REDIS_URL
+              value: redis://redis:6379
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi
+          livenessProbe:
+            httpGet:
+              path: /ping
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
